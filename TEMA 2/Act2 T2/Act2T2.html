@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2 Tema 2</title>
+
+</head>
+
+
+<body>
+    <script type="text/javascript">
+        function mensaje() {
+
+            let opcion = document.getElementById("fruta");
+            console.log(opcion.value);
+            alert(opcion.value);
+
+        }
+    </script>
+    <form>
+        <select name="frutas" id="fruta">
+
+            <option value="manzana">Manzana</option>
+            <option value="pera">Pera</option>
+            <option value="platano">Platano</option>
+            <option value="fresa">Fresa</option>
+
+        </select>
+        <br>
+
+        <button onclick="mensaje()">Mensaje</button>
+    </form>
+</body>
+
+</html>

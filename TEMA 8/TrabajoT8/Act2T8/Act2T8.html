@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2. Expresiones regulares</title>
+</head>
+
+<body>
+    <h1>Actividad 2</h1>
+    <p>Se pueden probar las expresiones regulares en la web: <a href="https://regex101.com/" target="_blank">regular
+            expressions 101</a></p>
+    <label for="usuario">Nombre usuario:</label>
+    <input type="text" id="usuario" value="">
+    <label for="telefono">Teléfono:</label>
+    <input type="text" id="telefono" value="">
+    <label for="correo">Correo electrónico:</label>
+    <input type="text" id="correo" value="">
+    <button id="btn" onClick="validar()">Validar!</button>
+    <br>
+    <br>
+    <span id="info">&nbsp;</span>
+
+    <script type="text/javascript">
+
+        var mensaje;
+        function validar() {
+
+            mensaje = "";
+
+            if (!isValidoUsuario()) {
+                mensaje = mensaje + "<b>Condiciones para el campo usuario: <b>" +
+                    "<ul><li>El usuario debe comenzar con una letra mayúscula.</li>" +
+                    "<li>Debe tener una longitud entre 8-10 caracteres.</li>" +
+                    "<li>Los dígitos no están permitidos.</li></ul>";
+            }else{
+                mensaje =mensaje + "usuario correcto <br>";
+            }
+            if (!isValidoTelefono()) {
+                mensaje = mensaje + "<b>Condiciones para el campo teléfono: <b>" +
+                    "<ul><li>Debe tener una longitud de 9 caracteres.</li>" +
+                    "<li>Solo números están permitidos.</li></ul>";
+            }else{
+                mensaje =mensaje + "teléfono correcto <br>";
+            }
+            if (!isValidoEmail()) {
+                mensaje = mensaje + "<b>Condiciones para el campo email:<b>" +
+                    "<ul><li>Debe contener el símbolo '@'.</li>" +
+                    "<li>Debe contener un dominio correcto.</li></ul>";
+            }else{
+                mensaje =mensaje + "mail correcto <br> ";
+            }
+            document.getElementById("info").innerHTML = mensaje;
+        }
+
+        function isValidoUsuario() {
+            var usuario = document.getElementById("usuario").value;
+            let condiciones = /^[A-Z][a-zA-Z]{7,9}$/;
+            return condiciones.test(usuario);
+        }
+
+        function isValidoTelefono() {
+            var telefono = document.getElementById("telefono").value;
+            let solonumeros_longitud9 = /^[0-9]{9}$/;
+            return solonumeros_longitud9.test(telefono);
+        }
+
+        function isValidoEmail() {
+            var correo = document.getElementById("correo").value;
+            let condiciones = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\., ;: \s @\"]{2,})$/;
+            return condiciones.test(correo);
+        }
+
+    </script>
+</body>
+
+</html>

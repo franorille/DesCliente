@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+</head>
+
+<body>
+    <input id="elem" type="button" value="Haz click en mí" />
+    <input type="button" value="¡Haz click en mí!" id="elem2">
+    <input value="Haz click aquí Codigo JS incluido en atr HTML" onclick="alert('¡Click!')" type="button">
+    <script>
+        console.log(elem); //ojo que no hace falta el método document.getElementById("elem");
+        function handler1() {
+            alert('¡Gracias!');
+        };
+
+        function handler2() {
+            alert('¡Gracias de nuevo!');
+        }
+
+        elem.onclick = () => alert("Hola");
+        elem.addEventListener("click", handler1); // Gracias!
+        elem.addEventListener("click", handler2); // Gracias de nuevo!
+
+
+        //EXISTEN EVENTOS QUE SOLO SE PUEDEN ASIGNAR CON addEventListener
+        document.onDOMContentLoaded = function () {
+            alert("DOM construido");
+        };
+        // Así sí funciona
+        document.addEventListener("DOMContentLoaded", function () {
+            alert("DOM construido");
+        });
+
+
+
+
+        elem2.onclick = function (event) {
+            // muestra el tipo de evento, el elemento y las coordenadas del click
+            alert(event.type + " en el " + event.currentTarget);
+            alert("Coordenadas: " + event.clientX + ":" + event.clientY);
+        };
+
+    </script>
+</body>
+
+</html>

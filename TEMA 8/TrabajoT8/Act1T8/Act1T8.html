@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 1 Tema 8</title>
+</head>
+<body>
+    
+    <form action="">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" pattern="[A-Z][a-zA-Z]{7,9}$"> <br> <!-- <br> Esa llave entre 7 y 9 caracteres solo afecta al segundo corchete -->
+
+        <label for="telefono">Telefono:</label>
+        <input type="text" pattern="[0-9]{9}$" name="telefono" id="telefono"> <br>
+
+        <!-- <label for="mail">Mail:</label>
+        <input type="email" name="mail" id="mail"> <br> -->
+
+        <label for="mail">Mail:</label>
+        <input type="email" name="mail" id="mail" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})$"> <br>
+
+        <input type="submit" value="Envia">
+    </form>
+
+</body>
+</html>

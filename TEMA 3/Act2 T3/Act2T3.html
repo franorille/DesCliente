@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2 Tema 3</title>
+</head>
+<body>
+    <script>
+
+        var miNumero =Number(23); // asignación explicita de tipo
+        var miString = String("Francisco");
+        var miBoolean = Boolean(1);
+        var resultado;
+
+        var resultadoNoCasting;
+
+        resultado=miString + " tiene " + String(miNumero) + " años siendo " + String(miBoolean);
+        //Se hace conversión de tipos explicita para pasar todas las variables a String
+
+        resultadoNoCasting=miString + " tiene " + miNumero + " años siendo " + miBoolean;
+
+
+        console.log(resultado); 
+        console.log("variable miNumero es de tipo " + typeof miNumero);
+        console.log("variable miString es de tipo " + typeof miString);
+        console.log("variable miBoolean es de tipo " + typeof miBoolean);
+        console.log("variable resultado es de tipo " + typeof resultado);
+
+        console.log(resultadoNoCasting);
+        console.log("variable resultadoNoCasting es de tipo " + typeof resultadoNoCasting);
+    </script>
+</body>
+</html>

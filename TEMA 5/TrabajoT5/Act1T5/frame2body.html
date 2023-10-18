@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="widht=device-width, initial-scale=1.0">
+        <title> Body </title>
+    </head>
+    <body>
+        
+        <script type="text/javascript">
+            var url=window.location.search;
+            var params= new URLSearchParams(url);
+            if (params!=null){
+
+                var tam =params.get("tam");
+                if (tam!=null){
+                    document.write("Tamaño : " + tam);
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoria Tema 9 Cookies JS</title>
+    <script>
+
+        function setCookie(name, value, timeLife = null) {
+            let cookie = `${name}=${encodeURIComponent(value)}`;
+            if (timeLife !== null) { //se puede establecer una duración, si no lo que dura la sesión
+                cookie += `; max-age=${timeLife * 60 * 60 * 24}`;
+            }
+            document.cookie = cookie; //si creamos más de una no se sobreescriben, sino que se añaden
+        }
+
+
+        function getCookies() {
+            let cookies = new Map(); //Creamos una estructura map donde guardaremos las cookies
+            let all = document.cookie; //Leemos toda la cookie a través del DOM
+            let list = all.split("; "); //Dividimos la cookie utilizando el separador ";" 
+            for (let cookie of list) { //recorremos la cookie con  un bucle for var auxiliar of lista
+                if (!cookie.includes("=")) continue; //Saltamos los campos que no sean valores
+                //Procesamos las clave-valor
+                let p = cookie.indexOf("="); // determinamos el índice de la posición que separa el nombre del valor
+                let name = cookie.substring(0, p); // substraemos el nombre de la cookie
+                let value = cookie.substring(p + 1); // substraemos el valor de la cookie
+                //Decoficamos el valor de la cookie atendiendo a la codificación
+                value = decodeURIComponent(value);
+                //Almacenamos la cookie en la estructura
+                cookies.set(name, value);
+            }
+            return cookies;
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

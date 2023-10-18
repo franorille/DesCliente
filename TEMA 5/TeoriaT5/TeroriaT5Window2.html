@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina abierta mediante función open</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1 id="title">Welcome amigo</h1>
+    </div>
+
+    <script>
+        //solo hace referencia a este documento
+
+        //método location
+        //metodo search - busca contenido
+        //método substr - para coger la url que queremos pasar
+        //metodo split - para dividir por el caracter ampersand
+        //en variable params almacenamos los parámetros que nos han pasado desde el archivo script.js 
+
+
+
+
+        var params = location.search.substr(1).split("&"); //será un array de dos elementos porque hemos pasado dos parámetros. Dividirá toda la url teniendo en cuenta los ampersand, que son los elementos usados para dividir la url
+        console.log(params); // en la consola podremos ver que tenemos un array con dos elementos, name y age.
+        
+        for (i = 0; i < params.length; i++) {
+            var item = params[i]; // en esta variable item que recorremos con un for ya tenemos en un array las claves y los valores asociados a las claves [name=alumno1, age=23, city=madrid, country=spain]
+            console.log(item);
+            var pair = item.split("="); // ahora queremos quedarnos por separado con cada 
+            //uno de los elementos clave valor pasados en los parámetros de la url por separado,
+            // usamos función split utilizando caracter = como elemento separador            
+            
+            if (pair[0] == "name") {
+                document.getElementById("title").innerText += " " + pair[1];
+                // si el elemento de las claves valor de 0, es decir el elemento clave es el nombre,
+                // añadiremos el elemento del array de pair[1], que es el valor a continuación 
+                //de lo que hay escrito en el contenedor con el id = title
+                //de lo contrario
+            } else {
+                
+                var par = document.createElement("p"); //creación de elemento párrafo
+                var textNode = document.createTextNode(pair[0] + " " + pair[1]); // creación de elemento de texto, con el contenido de la clave, separado por un espacio y el valor
+                par.appendChild(textNode); // añadimos el texto al elemento p creado
+                document.getElementById("container").appendChild(par); // añadimos el elemento párrafo al documento
+            }
+        }
+    </script>
+</body>
+
+</html>

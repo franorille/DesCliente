@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoria Tema 8 Formularios</title>
+
+</head>
+
+<body>
+
+    <form>
+        <div>
+            <label for="staticEmail2">Email</label>
+            <input type="text" id="staticEmail2">
+        </div>
+        <div>
+            <label for="pass">Password</label>
+            <input type="password" id="pass">
+        </div>
+        <span>datalist: </span><input list="browsers" name="browser" id="browser">
+        <datalist id="browsers">
+            <option value="Edge">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+        <div>
+            <button type="submit">Confirm identity</button>
+        </div>
+    </form>
+
+<!-- 
+    <form>
+        <label for="color">Selecciona un color:</label>
+        <input type="color" id="color" onchange="cambiarColor()">
+    </form>
+
+    <script>
+        function cambiarColor() {
+            const colorInput = document.getElementById('color');
+            document.body.style.backgroundColor = colorInput.value;
+        }
+    </script> -->
+<!-- 
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" oninput="mostrarMensaje()">
+    </form>
+
+    <p id="mensaje"></p>
+
+    <script>
+        function mostrarMensaje() {
+            const nombreInput = document.getElementById('nombre');
+            const mensaje = document.getElementById('mensaje');
+            mensaje.textContent = 'Nombre: ' + nombreInput.value;
+        }
+    </script> -->
+
+    <!-- <form onreset="mostrarMensaje()">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" value="John">
+        <input type="reset" value="Restablecer">
+    </form>
+
+    <p id="mensaje"></p>
+
+    <script>
+        function mostrarMensaje() {
+            const mensaje = document.getElementById('mensaje');
+            mensaje.textContent = 'Formulario restablecido';
+        }
+    </script> -->
+
+    <!-- <form>
+        <label for="texto">Texto:</label>
+        <input type="text" id="texto" onselect="mostrarSeleccion()">
+    </form>
+
+    <p id="seleccion"></p>
+
+    <script>
+        function mostrarSeleccion() {
+            const textoInput = document.getElementById('texto');
+            const seleccion = document.getElementById('seleccion');
+            seleccion.textContent = 'Texto seleccionado: ' + textoInput.value;
+        }
+    </script> -->
+
+    <!-- <form onsubmit="return validarFormulario()">
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" required>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script>
+        function validarFormulario() {
+            const emailInput = document.getElementById('email');
+            if (!emailInput.checkValidity()) {
+                alert('Por favor, ingrese un correo electrónico válido.');
+                return false; // Evita que se envíe el formulario si la validación falla.
+            }
+            return true; // Permite que el formulario se envíe si la validación es exitosa.
+        }
+    </script> -->
+
+
+
+
+
+
+
+
+</body>
+
+</html>

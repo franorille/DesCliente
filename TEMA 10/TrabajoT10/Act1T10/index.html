@@ -1,0 +1,68 @@
+<!--
+   Crea un documento básico HTML que contenga una estructura básica con una cabecera y un
+cuerpo. Necesitamos un sistema para la búsqueda de vuelos y otro para la búsqueda de
+hoteles. Las características de cada sistema son:
+• Sistema de reserva vuelo: requiere la fecha de ida/vuelta, ciudad de origen y
+destino
+• Sistema de reserva de hotel: requiere la fecha de entrada/salida, ciudad y
+número de personas.
+Dado estos sistemas, aplica el patrón fachada para que el programador que use ambos
+sistemas no tenga que conocer las particularidades de cada uno.
+Recuerda que desde un archivo JavaScript se puede acceder a funciones declaradas en otros
+archivos.
+IMPORTANTE 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Actividad Unica Tema 10 Patron FACHADA</title>
+</head>
+
+
+
+
+
+<header>
+
+    <div class="container-fluid text-center bg-body-secondary p-3">
+        <h2>Los hoteles y vuelos al mejor precio están aquí</h2>
+    </div>
+</header>
+
+
+
+
+
+
+
+<body>
+
+    <div class="container-fluid">
+        <div class="d-flex justify-content-center py-3 bg-body">
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="/TEMA 10/TrabajoT10/Act1T10/html/BuscadorVuelos.html" target="_blank"
+                        class="nav-link">Vuelos</a></li>
+                <li class="nav-item"><a href="/TEMA 10/TrabajoT10/Act1T10/html/BuscadorHoteles.html" target="_blank"
+                        class="nav-link">Hoteles</a></li>
+
+            </ul>
+        </div>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+
+</html>

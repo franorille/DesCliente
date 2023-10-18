@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2 Tema 7 carga funciones</title>
+</head>
+
+<body onload="cargaFunciones()">
+    <h1>Hola</h1>
+    <script>
+        var lista = new Array(100);
+        function cargaFunciones() {
+            generaLista();
+            maxLista();
+            minLista();
+        }
+        function generaLista() {
+
+            for (let i = 0; i < lista.length; i++) {
+                lista[i] = Math.round(Math.random() * 100);
+            }
+            alert("La lista de valores es:\n " + lista);
+        
+        }
+        function maxLista() {
+            var max = lista[0];
+            for (let i = 0; i < lista.length; i++) {
+                if (lista[i] > max) {
+                    max = lista[i];
+                }
+            }
+            alert("El valor máximo de la lista es " + max);
+        }
+        function minLista() {
+            var min = lista[0];
+            for (let i = 0; i < lista.length; i++) {
+                if (lista[i] < min) {
+                    min = lista[i];
+                }
+            }
+            alert("El valor minimo de la lista es " + min);
+        }
+
+    </script>
+</body>
+
+</html>

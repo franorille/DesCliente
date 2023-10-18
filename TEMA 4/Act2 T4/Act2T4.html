@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2 Tema 4</title>
+</head>
+
+<body>
+
+    <script>
+
+        let nota1 = 5;
+        let nota2 = 8;
+        let nota3 = 3;
+        let nota4 = 9;
+
+        let media = (nota1 + nota2 + nota3 + nota4) / 4;
+        var calificacion1;
+        var calificacion2;
+        var calificacion3;
+        var calificacion4;
+
+        var mensaje
+
+        if (nota1 < 5) {
+            calificacion1 = "Suspenso";
+        } else if (nota1 < 7) {
+            calificacion1 = "Aprobado";
+        } else if (nota1 < 9) {
+            calificacion1 = "Notable";
+        } else {
+            calificacion1 = "Sobresaliente";
+        }
+
+        if (nota2 < 5) {
+            calificacion2 = "Suspenso";
+        } else if (nota2 < 7) {
+            calificacion2 = "Aprobado";
+        } else if (nota2 < 9) {
+            calificacion2 = "Notable";
+        } else {
+            calificacion2 = "Sobresaliente";
+        }
+
+        if (nota3 < 5) {
+            calificacion3 = "Suspenso";
+        } else if (nota3 < 7) {
+            calificacion3 = "Aprobado";
+        } else if (nota3 < 9) {
+            calificacion3 = "Notable";
+        } else {
+            calificacion3 = "Sobresaliente";
+        }
+
+        if (nota4 < 5) {
+            calificacion4 = "Suspenso";
+        } else if (nota4 < 7) {
+            calificacion4 = "Aprobado";
+        } else if (nota4 < 9) {
+            calificacion4 = "Notable";
+        } else {
+            calificacion4 = "Sobresaliente";
+        }
+
+        console.log("La primera nota " + nota1 + " se ha calificado como " + calificacion1);
+        console.log("La segunda nota " + nota2 + " se ha calificado como " + calificacion2);
+        console.log("La tercera nota " + nota3 + " se ha calificado como " + calificacion3);
+        console.log("La cuarta nota " + nota4 + " se ha calificado como " + calificacion4);
+
+        console.log("la media de las 4 notas ha sido " + media);
+
+    </script>
+
+</body>
+
+</html>

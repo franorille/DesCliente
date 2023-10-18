@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresiones Regulares</title>
+
+</head>
+
+<body>
+    <input type="text" name="texto" id="texto">
+    <button id="comprueba">Comprueba addEventListener</button>
+    <button id="comprueba2" onclick="check()">Comprueba onclick</button>
+
+    <script type="text/javascript">
+        miPatron = new RegExp("[a-zA-Z]{3,6}");
+        miPatron2 = /[a-zA-Z]{3,6}/;
+        miPatron3 = new RegExp("^[a-zA-Z]{1,}[0-9]{2}");
+
+
+        function check() {
+            var texto = document.getElementById("texto").value;
+            alert(texto);
+
+            // alert(miPatron.test(texto));
+            // alert(texto.match(miPatron2));
+
+            alert(miPatron3.test(texto));
+            alert(texto.match(miPatron3));
+
+            //expReg.test("String") -- boolean
+            //String.match(expReg) -- devuelve String con coincidencia
+
+            /*
+                CARACTERES ESPECIALES EN EXPRESIONES REGULARES
+
+            * Se utiliza para indicar la repetición de caracteres desde 0 a n veces.
+            + Se utiliza para indicar la repetición de caracteres desde 1 a n veces.
+            ? Permite indicar que un carácter es opcional.
+            . Permite indicar cualquier carácter.
+            \ Se utiliza como carácter para introducir el reconocimiento de otros caracteres especiales.
+            ^ Se utiliza para determinar el comienzo de una expresión.
+            $ Se utiliza para determinar el final de una expresión.
+            [] enumeración de caracteres permitidos
+            {} numero de caracteres permitidos
+            | or 
+            () agrupa expresines
+
+
+            */
+        }
+        comprueba.addEventListener("click",check); //ojo no debe ponerse check() porque si no se ejecuta inmediatamente
+    </script>
+</body>
+
+</html>

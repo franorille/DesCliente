@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2 Tema 6</title>
+</head>
+
+<body>
+
+    <div id="container">
+
+    </div>
+
+    <script>
+
+        function imprime(dato) {
+            var h2 = document.createElement("h2");
+            h2.innerText = dato;
+            var ul = document.createElement("ul");
+            for (let i = 0; i < numeros.length; i++) {
+
+                var li = document.createElement("li");
+                li.innerHTML = numeros[i];
+                ul.appendChild(li);
+            }
+            container.appendChild(h2);
+            container.appendChild(ul);
+        }
+
+        var container = document.getElementById("container");
+
+        //declaración array
+        var numeros = new Array(5);
+        //generación numeros aleatorios e incorporación al array
+        for (let i = 0; i < numeros.length; i++) {
+            numeros[i] = Math.round(Math.random() * 100);
+        }
+
+        //IMPRESION ELEMENTOS DESORDENADOS
+
+        imprime("DATOS DESORDENADOS");
+
+        //ORDENA IMPARES PRIMERO
+        console.log(numeros);
+        var i = 0;
+        numeros.sort(function (a, b) {
+            let resultado = a % 2 - b % 2 || a - b;
+            console.log(resultado);
+            return resultado;
+
+        });
+        console.log(i);
+        console.log(numeros);
+        imprime("DATOS ORDENADOS POR PARES IMPARES");
+
+
+
+
+    </script>
+</body>
+
+</html>

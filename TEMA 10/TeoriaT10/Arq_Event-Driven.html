@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitectura Event Driven con geolocalización</title>
+</head>
+
+<body>
+    <p>Vídeo 1 Tema 10</p>
+
+    <button type="button" onclick="getLocation()">Where am I?</button>
+    <p id="result"></p>
+    <script>
+        let result = document.getElementById("result");
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(onPositionGet)
+            } else {
+                result.innerText("Geolocation is not supported");
+            }
+
+        }
+        function onPositionGet(position) {
+            result.innerHTML = position.coords.latitude + "," + position.coords.longitude +"\n" +
+             " La precisión de latitud y longitud en metros es " + position.coords.accuracy; 
+            
+        }
+    </script>
+</body>
+
+</html>

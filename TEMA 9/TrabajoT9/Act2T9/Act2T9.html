@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2 Tema 9</title>
+</head>
+
+<body>
+
+    <form onsubmit="return check()"> <!-- indico return para que me devuelva el resultado de la función. 
+                                        si devuelve true, el formulario sigue su curso y se envía
+                                        si devuelve false, no se envía el formulario al servidor-->
+
+        <label for="texto">Introduce fecha</label>
+        <input type="text" name="texto" id="texto" placeholder="YYYY/MM/DD">
+        <input type="submit" value="Comprueba" id="btnComprueba">
+    </form>
+
+    <script>
+
+        document.cookie = "cookie2=cookie creada por mi directamente";
+        function check() {
+            var fecha = document.getElementById("texto").value;
+            //console.log(fecha);
+            let miPatron = new RegExp("^((20[0-3]{2})|(19[0-9]{2}))/((0[0-9])|(1[0-2]))/(([0-2][0-9])|(3[0-1]))$");
+            //alert(miPatron.test(fecha));
+            if (miPatron.test(fecha)) {
+                //alert(miPatron.test(fecha));
+                alert("Formato correcto, se envía el formulario y se leeran las cookies")
+                leerCookies();
+                return true;
+            } else {
+                alert("Formato incorrecto, no se ha enviado el formulario")
+                return false;
+            }
+        }
+
+        function leerCookies() {
+            let mapaCookies = new Map();
+            let todasCookies = document.cookie;
+            let listaCookies = todasCookies.split(";");
+
+            for (const cookie of listaCookies) {
+                if (!cookie.includes("=")) {
+                    continue;
+                }
+                var separacion = cookie.indexOf("=");
+
+                var nombreCookie = cookie.substring(0, separacion); //desde 0 hasta separacion -1
+                var valorCookie = cookie.substring(separacion + 1); //desde separacion +1 hasta final
+                valorCookie = decodeURIComponent(valorCookie); // codificación del valor de la cookie para que no tenga problemas
+                mapaCookies.set(nombreCookie, valorCookie); //almacenamos los pares de nombre - valor de las cookies en un mapa
+            }
+            console.log(mapaCookies);
+            alert("mira las cookies");
+            return mapaCookies;
+        }
+
+
+    </script>
+</body>
+
+</html>

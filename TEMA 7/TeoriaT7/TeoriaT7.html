@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoria Tema 7 Funciones</title>
+</head>
+
+<body>
+
+    <p id="part1"></p>
+
+    <p id="part2"></p>
+
+    <script>
+
+        function cambia(id, inicio, fin) {
+            var par = document.getElementById(id);
+            for (i = inicio; i < fin; i++) {
+                par.innerHTML += i + " ";
+            }
+        }
+
+cambia("part1",0,15);
+cambia("part2",15,30);
+
+    </script>
+</body>
+
+</html>
