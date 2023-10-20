@@ -14,9 +14,10 @@
         var url = window.location.search; // permite capturar el contenido de la cadena de consulta 
         var params = new URLSearchParams(url); // convierte a un objeto la cadena de consulta para que la puedas usar para acceder a sus claves y valores
         var mensaje = params.get("mensaje");//objetemos el valor del parámetro del objeto de la cadena de consulta que se llama mensaje, por lo que devuelve el contenido, lo que hay después del igual
+        var nombre=params.get("nombre");
         if (mensaje != null) { // si hay algo de contenido en el parámetro mensaje de la cadena de consulta, creamos nuevo elemento párrafo, le añadimos el texto correspondiente al contenido de la cadena de consulta y lo añadimos al html
             var h1 = document.createElement("h1");
-            h1.innerText = mensaje;
+            h1.innerText = mensaje + " " + nombre;
             document.body.appendChild(h1); //ojo tenemos que especificar a que parte lo añadimos (document.body) si no ponemos .body no sale nada
         }
     </script>

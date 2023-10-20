@@ -9,14 +9,17 @@
 
 <body>
     <textarea name="texto" id="texto" cols="30" rows="10"></textarea>
+    <input type="text" name="nombre" id="nombre" placeholder="Introduce tu nombre">
     <br>
 
     <button onclick="envia()">Envia</button>
 
     <script>
         function envia() {
-            var mens = document.getElementById("texto").value; //almacenamos contenido o valor del elemento textarea
-            window.open("Act2T5secundaria.html?mensaje="+mens); //abrimos nueva ventana, situada en la url Act2T5secundaria.html 
+            var mens = document.getElementById("texto").value;
+            var nom= document.getElementById("nombre").value;
+            //almacenamos contenido o valor del elemento textarea
+            window.open("Act2T5secundaria.html?mensaje="+mens+"&nombre="+nom); //abrimos nueva ventana, situada en la url Act2T5secundaria.html 
             //le pasamos la CADENA DE CONSULTA (que es lo que viene tras la ?) --> mensaje="+mens
         }
     </script>
